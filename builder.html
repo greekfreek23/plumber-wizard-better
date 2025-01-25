@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plumber Site Builder Wizard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Plumber Site Builder Wizard</h1>
+<p>
+  This wizard will fetch data from 
+  <code>finalWebsiteData.json</code> & 
+  <code>businessPhotoContent.json</code>, 
+  let you choose a siteId, and build your site sections with 
+  a <strong>styled hero preview</strong>.
+</p>
+
+<!-- Step 1: Choose siteId -->
+<div id="wizardStep1" class="step-container">
+  <h2>Step 1: Choose Business</h2>
+  <select id="siteIdSelect"></select>
+  <button id="step1Next" class="nav-button">Next</button>
+</div>
+
+<!-- Step 2: Hero Builder (with styled preview) -->
+<div id="wizardStep2" class="step-container hidden">
+  <h2>Step 2: Hero Builder</h2>
+  
+  <!-- We'll show one slide at a time with next/prev to cycle through images -->
+  <div id="heroPreview" class="hero-preview">
+    <div class="hero-slide" id="heroSlide" style="background-image: none;">
+      <div class="hero-overlay">
+        <input type="text" class="cta-input" id="ctaInput" placeholder="Edit your call-to-action here" />
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero-controls">
+    <button id="prevHeroBtn" class="nav-button">Prev</button>
+    <span id="heroSlideIndex"></span>
+    <button id="nextHeroBtn" class="nav-button">Next</button>
+  </div>
+  
+  <button id="step2Back" class="nav-button">Back</button>
+  <button id="step2Next" class="nav-button">Next</button>
+</div>
+
+<!-- Step 3: About Section -->
+<div id="wizardStep3" class="step-container hidden">
+  <h2>Step 3: About Us</h2>
+  <textarea id="aboutText" rows="6" cols="50"></textarea>
+  <button id="step3Back" class="nav-button">Back</button>
+  <button id="step3Next" class="nav-button">Next</button>
+</div>
+
+<!-- Step 4: Final Preview (placeholder) -->
+<div id="wizardStep4" class="step-container hidden">
+  <h2>Preview & Publish</h2>
+  <div id="previewArea" style="border:1px solid #ccc; padding:1rem; min-height:200px;"></div>
+  <button id="step4Back" class="nav-button">Back</button>
+  <button id="finishBtn" class="nav-button">Finish & Download</button>
+</div>
+
+<script src="builder.js"></script>
+</body>
+</html>
