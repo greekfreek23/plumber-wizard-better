@@ -23,28 +23,65 @@
   <button id="step1Next" class="nav-button">Next</button>
 </div>
 
-<!-- Step 2: Hero Builder (with styled preview) -->
+<!-- Step 2: Hero Builder -->
 <div id="wizardStep2" class="step-container hidden">
   <h2>Step 2: Hero Builder</h2>
   
-  <!-- We'll show one slide at a time with next/prev to cycle through images -->
-  <div id="heroPreview" class="hero-preview">
-    <div class="hero-slide" id="heroSlide" style="background-image: none;">
-      <div class="hero-overlay">
-        <input type="text" class="cta-input" id="ctaInput" placeholder="Edit your call-to-action here" />
+  <!-- Slides Preview: looks exactly like your final site’s hero -->
+  <div class="hero" id="heroPreview">
+    <div class="slides">
+      <!-- We'll have up to 3 slides by default. Could be more if you want. -->
+      <div class="slide active" data-slide-index="0">
+        <div class="hero-overlay">
+          <p class="hero-desc"></p>
+          <a href="tel:" class="hero-cta">
+            <i class="fas fa-phone"></i>
+            <strong><span data-phone></span></strong>
+          </a>
+        </div>
+      </div>
+      <div class="slide" data-slide-index="1">
+        <div class="hero-overlay">
+          <p class="hero-desc"></p>
+          <a href="tel:" class="hero-cta">
+            <i class="fas fa-phone"></i>
+            <strong><span data-phone></span></strong>
+          </a>
+        </div>
+      </div>
+      <div class="slide" data-slide-index="2">
+        <div class="hero-overlay">
+          <p class="hero-desc"></p>
+          <a href="tel:" class="hero-cta">
+            <i class="fas fa-phone"></i>
+            <strong><span data-phone></span></strong>
+          </a>
+        </div>
       </div>
     </div>
   </div>
   
-  <div class="hero-controls">
-    <button id="prevHeroBtn" class="nav-button">Prev</button>
-    <span id="heroSlideIndex"></span>
-    <button id="nextHeroBtn" class="nav-button">Next</button>
+  <!-- Controls for each slide -->
+  <div id="heroControls">
+    <div class="slide-control" data-idx="0">
+      <label>Image URL:</label>
+      <input type="text" class="image-url-input" data-idx="0">
+      <label>CTA Text:</label>
+      <input type="text" class="cta-text-input" data-idx="0">
+      <button class="openGalleryBtn" data-idx="0">Pick from GSheets</button>
+      <button class="generateCtaBtn" data-idx="0">Generate CTA w/Claude</button>
+    </div>
+    <!-- repeated for slide 1, slide 2 -->
+    <div class="slide-control" data-idx="1"> ... </div>
+    <div class="slide-control" data-idx="2"> ... </div>
   </div>
-  
-  <button id="step2Back" class="nav-button">Back</button>
-  <button id="step2Next" class="nav-button">Next</button>
+
+  <div class="button-group">
+    <button id="step2Back" class="nav-button">Back</button>
+    <button id="step2Next" class="nav-button">Next</button>
+  </div>
 </div>
+
 
 <!-- Step 3: About Section -->
 <div id="wizardStep3" class="step-container hidden">
